@@ -77,7 +77,7 @@ def calculate_difficulty(row):
         # determine the difficulty level based on total minutes
         if total_mins > 60:
             return "Hard"
-        elif 30 <= total_mins <= 60:
+        elif total_mins>= 30 and total_mins <= 60:
             return "Medium"
         elif total_mins < 30:
             return "Easy"
