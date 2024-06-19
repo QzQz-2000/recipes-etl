@@ -4,9 +4,8 @@
 This Python script downloads a JSON file containing recipes from a web URL, parses the data into a Pandas DataFrame, filters recipes based on ingredients containing specific keywords ('chilies', 'chiles', 'chili'), calculates the difficulty level of each recipe based on preparation and cooking times, and outputs the filtered recipes with difficulty levels to a CSV file.
 
 ## Requirements
-Python 3.11.5 or higher
-Required Python modules specified in requirements.txt
-Internet connection
+- Python 3.11.5 or higher
+- Required Python modules specified in requirements.txt
 
 ## Installation
 1. Clone the repository using the following command:
