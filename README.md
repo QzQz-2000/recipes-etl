@@ -10,8 +10,8 @@ This Python script downloads a JSON file containing recipes from a web URL, pars
 ## Installation
 1. Clone the repository using the following command:
 ```bash
-git clone https://github.com/your_username/recipe-processing.git
-cd recipe-processing
+git clone https://github.com/QzQz-2000/recipes-etl.git
+cd recipes-etl
 ```
 
 2. Install dependencies:
@@ -31,7 +31,7 @@ pip install -r requirements.txt
 
 ## RUNNING
 
-1. Execute the python script:
+Execute the python script:
 
 ```bash
 python recipes_etl.py
