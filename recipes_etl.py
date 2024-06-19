@@ -28,11 +28,9 @@ def download_and_parse_recipes(url):
 def save_to_json(data, file_path):
     """
     Save data to a JSON file.
-
     Parameters:
     data: The data to be saved as JSON.
     file_path: The file path to save the JSON data.
-
     Returns: None
     """
     with open(file_path, 'w') as f:
@@ -60,8 +58,6 @@ def filter_recipes_by_keyword(df, keyword):
     """
     filtered_df = df[df['ingredients'].str.lower().str.contains(keyword, regex=True)]
     return filtered_df
-
-import re
 
 def parse_iso_duration(duration):
     """
