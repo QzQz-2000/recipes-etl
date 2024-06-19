@@ -43,6 +43,6 @@ python recipes_etl.py
 
 **requirements.txt**: Specifies Python packages required to run the script.
 
-**README.md**: This file, providing instructions and information about the script.
+**README.md**: Providing instructions and information about the script.
 
-**final_recipes.csv**: Example output CSV file containing filtered recipes with difficulty levels.
+**final_recipes.csv**: Final output CSV file containing filtered recipes with difficulty levels.
