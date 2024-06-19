@@ -7,9 +7,6 @@ import requests
 def download_and_parse_recipes(url):
     """
     Download recipes dataset from the given url, parse it as JSON
-    Parameters: url: The URL to download the dataset.
-    Returns:
-    list: A list of dictionaries representing recipes data.
     """
     try:
         response = requests.get(url)
@@ -28,10 +25,6 @@ def download_and_parse_recipes(url):
 def save_to_json(data, file_path):
     """
     Save data to a JSON file.
-    Parameters:
-    data: The data to be saved as JSON.
-    file_path: The file path to save the JSON data.
-    Returns: None
     """
     with open(file_path, 'w') as f:
         json.dump(data, f, indent=2)
@@ -39,22 +32,13 @@ def save_to_json(data, file_path):
 def save_to_csv(data, file_path):
     """
     Save data to a CSV file.
-    Parameters:
-    data: The data to be saved as CSV.
-    file_path: The file path to save the CSV data.
-    Returns: None
     """
     df = pd.DataFrame(data)
     df.to_csv(file_path, index=False)
     
 def filter_recipes_by_keyword(df, keyword):
     """
-    Filter recipes DataFrame by a keyword in the 'ingredients' column.
-    Parameters:
-    df: The dataframe containing recipes data.
-    keyword: The keyword to filter recipes by.
-    Returns:
-    pandas.DataFrame: Filtered DataFrame containing recipes that match the keyword.
+    Filter recipes DataFrame by a keyword in the 'ingredients' column
     """
     filtered_df = df[df['ingredients'].str.lower().str.contains(keyword, regex=True)]
     return filtered_df
@@ -62,10 +46,6 @@ def filter_recipes_by_keyword(df, keyword):
 def parse_iso_duration(duration):
     """
     Parse an ISO 8601 duration string into hours and minutes.
-    Parameters:
-    duration: ISO 8601 duration string
-    Returns:
-    tuple: A tuple containing hours (int) and minutes (int).
     """
     # where duration is only 'PT'
     if duration == "PT":
@@ -83,24 +63,18 @@ def parse_iso_duration(duration):
 
 def calculate_difficulty(row):
     """
-    Calculate the difficulty of a recipe based on prepTime and cookTime.
-    Parameters:
-    row: A row from a DataFrame containing 'prepTime' and 'cookTime' columns.
-    Returns:
-    str: Difficulty 
+    Calculate the difficulty of a recipe based on prepTime and cookTime
     """
     try:
         prep_time = row.get("prepTime", "PT0M")
         cook_time = row.get("cookTime", "PT0M")
 
-        # Parse the prepTime and cookTime into hours and minutes
+        # parse the prepTime and cookTime into hours and mins
         prep_hours, prep_minutes = parse_iso_duration(prep_time)
         cook_hours, cook_minutes = parse_iso_duration(cook_time)
-
-        # Calculate the total minutes
         total_mins = (prep_hours * 60 + prep_minutes) + (cook_hours * 60 + cook_minutes)
 
-        # Determine the difficulty level based on total minutes
+        # determine the difficulty level based on total minutes
         if total_mins > 60:
             return "Hard"
         elif 30 <= total_mins <= 60:
@@ -114,10 +88,10 @@ def calculate_difficulty(row):
 
 def main():
     """
-    Main function to download recipes data, process it, and save the processed data to CSV.
+    Main function to download recipes data, process it, and save the processed data to CSV
     """
-    
     url = "https://bnlf-tests.s3.eu-central-1.amazonaws.com/recipes.json"
+    # download the dataset
     recipes = download_and_parse_recipes(url)
 
     # save the dataset files
