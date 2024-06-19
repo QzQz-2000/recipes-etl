@@ -53,7 +53,7 @@ def parse_iso_duration(duration):
 
     # use regex to match the hours and mins
     hour_min = re.match(r'^PT(?:(\d+)H)?(?:(\d+)M)?$', duration)
-    if hour_min is False:
+    if hour_min is None:
         return 0, 0
 
     # extract hours and minutes
