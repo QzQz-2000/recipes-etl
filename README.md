@@ -84,10 +84,10 @@ After installing the prerequisites, follow these steps.
 
 1. **Clone the Repository**: Clone this repository to your local machine using the following command:
 
-```bash
-git clone https://github.com/QzQz-2000/recipes-etl.git
-cd recipes-etl
- ```
+  ```bash
+  git clone https://github.com/QzQz-2000/recipes-etl.git
+  cd recipes-etl
+   ```
 
 2. **Set Up GCP Authentication**: Configure authentication for Google Cloud Platform by following the instructions [here](https://cloud.google.com/docs/authentication/getting-started).
 
