@@ -1,6 +1,7 @@
 # Recipe Data ETL
 
 ## Overview
+We use two methods to perform the ETL of recipe data: one is through a Python script, and the other is by using various related tools to construct an orchestrated ETL pipeline.
 
 ### Python Scripts
 
