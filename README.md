@@ -62,11 +62,9 @@ Before you can start working with this project, ensure you have the following pr
 
 1. **Google Cloud Platform (GCP) Account**
 
-You'll need a GCP account to use Google Cloud services such as Google Cloud Storage. If you don't have a GCP account, sign up for free [here](https://cloud.google.com/free).
+- You'll need a GCP account to use Google Cloud services such as Google Cloud Storage. If you don't have a GCP account, sign up for free [here](https://cloud.google.com/free).
 
 2. **Terraform**
-
-Terraform is used for provisioning and managing cloud infrastructure.
 
 - Make sure you have installed Terraform, if not, follow the instructions [here](https://developer.hashicorp.com/terraform/install).
 - Verify the installation by running `terraform --version` in your terminal.
