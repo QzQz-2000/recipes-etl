@@ -15,10 +15,8 @@ def transform(data, *args, **kwargs):
     Returns:
         pd.DataFrame: Filtered DataFrame containing recipes with the specified ingredient.
     """
-    # 定义要匹配的食材关键词和其变体
-    ingredient_pattern = r'chil[ie]+s?'  # 匹配 "Chilies", "Chiles", "Chile" 等
-    
-    # 使用正则表达式进行模糊匹配，并忽略大小写
+    ingredient_pattern = r'chil[ie]+s?'
+
     filtered_recipes = data[data['ingredients'].str.contains(ingredient_pattern, case=False, regex=True)]
     
     return filtered_recipes
