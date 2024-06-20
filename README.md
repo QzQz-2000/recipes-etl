@@ -126,3 +126,8 @@ Add 'difficulty' column to the data: [add_difficulty_column.py](https://github.c
 Export CSV data to Google Cloud Storage bucket: [export_recipe_data.py](https://github.com/QzQz-2000/recipes-etl/blob/main/mage/your_first_project/data_exporters/export_recipe_data.py)
 
 Export CSV data to Google BigQuery: [export_recipe_bq.py](https://github.com/QzQz-2000/recipes-etl/blob/main/mage/your_first_project/data_exporters/export_recipe_bq.py)
+
+## What can we do more?
+- We can introduce Apache Spark to significantly speed up data processing and utilize partitioning to store the data in Parquet format for improved query efficiency. For example, we can partition the recipe data by year. This is very useful for large dataset.
+- If we acquire more data in the future, we can utilize dbt to model the data by dividing it into dimension and fact tables, thereby constructing a star schema. Ultimately, we can import the data into Looker Studio for visualization.
+- Similarly, our solution can leverage AWS tools to achieve the same goals. We can use Amazon S3 for object storage services and Amazon Redshift to perform the functions of BigQuery.
