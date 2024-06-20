@@ -101,7 +101,7 @@ After installing the prerequisites, follow these steps.
 
 4. **Start Mage**: Navigate to the `Mage` directory and start Mage by doing `docker-compose up`. The navigate to http://localhost:6789 in your browser to use Mage.
 
-5. **Deploy the Data Pipeline**: Run the exporters, loaders and transofmers located inside the dags folder. This will ingest the data to the Google Cloud Storage, and from there to BigQuery. Make sure to run the pipeline as follows:
+5. **Deploy the Data Pipeline**: Make sure to run the pipeline as follows:
 
    ![f1](./images/f1.png)
 
@@ -112,3 +112,17 @@ After installing the prerequisites, follow these steps.
    In BigQuery you can see the `recipe` table we created in Mage. There we can do some SQL analysis.
 
    ![bq](./images/bq.png)
+
+### Mage Pipeline
+#### Data loader
+Load the recipe dataset from API: [load_recipe_data.py](https://github.com/QzQz-2000/recipes-etl/blob/main/mage/your_first_project/data_loaders/load_recipe_data.py)
+
+#### Transformer
+Extract the recipe of chillis: [extract_chilli_recipe.py](https://github.com/QzQz-2000/recipes-etl/blob/main/mage/your_first_project/transformers/extract_chilli_recipe.py)
+
+Add 'difficulty' column to the data: [add_difficulty_column.py](https://github.com/QzQz-2000/recipes-etl/blob/main/mage/your_first_project/transformers/add_difficulty_column.py)
+
+#### Data exporter
+Export CSV data to Google Cloud Storage bucket: [export_recipe_data.py](https://github.com/QzQz-2000/recipes-etl/blob/main/mage/your_first_project/data_exporters/export_recipe_data.py)
+
+Export CSV data to Google BigQuery: [export_recipe_bq.py](https://github.com/QzQz-2000/recipes-etl/blob/main/mage/your_first_project/data_exporters/export_recipe_bq.py)
