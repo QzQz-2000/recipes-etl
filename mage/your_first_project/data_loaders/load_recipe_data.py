@@ -17,20 +17,16 @@ def load_data_from_api(*args, **kwargs):
     """
     url = 'https://bnlf-tests.s3.eu-central-1.amazonaws.com/recipes.json'
     try:
-        # 发送 GET 请求获取 JSON 数据
         response = requests.get(url)
         
-        # 确保响应成功
-        if response.status_code == 200:
-            # 将 JSON 数据转换为 DataFrame
+        if response.status_code == 200: 
             df = pd.read_json(response.text, lines=True)
+            # convert to Dataframe
             return pd.DataFrame(df)
         else:
-            # 如果请求失败，打印错误信息并返回 None
             print(f"Failed to fetch data from {url}. Status code: {response.status_code}")
             return None
     except Exception as e:
-        # 处理异常情况
         print(f"Error loading data from {url}: {str(e)}")
         return None
 
