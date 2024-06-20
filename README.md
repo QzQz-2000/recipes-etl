@@ -109,7 +109,7 @@ After installing the prerequisites, follow these steps.
 
    ![gcs](./images/gcs.png)
 
-   In BigQuery you can see the `recipe` table we created in Mage. There we can do some SQL analysis.
+   In BigQuery you can see the `recipe` table we created in Mage. There we can do some SQL analysis. The query can be found here: [recipe_analysis_bigquery.sql](https://github.com/QzQz-2000/recipes-etl/blob/main/recipe_analysis_bigquery.sql)
 
    ![bq](./images/bq.png)
 
