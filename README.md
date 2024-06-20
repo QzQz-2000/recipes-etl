@@ -1,18 +1,16 @@
-# Recipe Data ETL
-
-## Overview
+# Overview
 We use two methods to perform the ETL of recipe data: one is through a Python script, and the other is by using various related tools to construct an orchestrated ETL pipeline.
 
-### Python Scripts
+## Python Scripts
 
 This Python script downloads a JSON file containing recipes from a web URL, parses the data into a Pandas DataFrame, filters recipes based on ingredients containing specific keywords ('chilies', 'chiles', 'chili'), calculates the difficulty level of each recipe based on preparation and cooking times, and outputs the filtered recipes with difficulty levels to a CSV file.
 
-#### Requirements
+### Requirements
 
 - Python 3.11.5 or higher
 - Required Python modules specified in requirements.txt
 
-#### Installation
+### Installation
 
 1. Clone the repository using the following command:
 ```bash
@@ -35,7 +33,7 @@ Install required packages:
 pip install -r requirements.txt
 ```
 
-#### Run the python script
+### Run the python script
 
 Execute the python script:
 
@@ -43,11 +41,11 @@ Execute the python script:
 python recipes_etl.py
 ```
 
-### Orchestrated ETL pipeline
+## Orchestrated ETL pipeline
 
 Now we can undertake an interesting experiment. Earlier, we implemented an ETL process using Python. We can now attempt to build a well-orchestrated ETL pipeline and upload the final CSV file to a cloud platform. This aims to streamline data processing workflows, ensure data integrity, and enable efficient analytics and reporting.
 
-#### Technologies used
+### Technologies used
 
 - **Mage:**
   - Open-source data pipeline tool for transforming and integrating data.
@@ -58,7 +56,7 @@ Now we can undertake an interesting experiment. Earlier, we implemented an ETL p
 - **Google Cloud Storage and BigQuery:**
   - Cloud storage and data warehousing solutions for storing and analyzing large datasets.
 
-#### Prerequisites
+### Prerequisites
 
 Before you can start working with this project, ensure you have the following prerequisites installed and set up:
 
@@ -82,7 +80,7 @@ Terraform is used for provisioning and managing cloud infrastructure.
 
 - Install Mage by following the instructions in the [official documentation](https://docs.mage.ai/introduction/overview)
 
-#### Running the pipeline
+### Running the pipeline
 
 After installing the prerequisites, follow these steps.
 
@@ -115,15 +113,3 @@ After installing the prerequisites, follow these steps.
    In BigQuery you can see the `recipe` table we created in Mage. There we can do some SQL analysis.
 
    ![bq](./images/bq.png)
-
-   
-
-## Files
-
-**recipes_etl.py**: Main Python script that downloads, processes, and analyzes recipes data.
-
-**requirements.txt**: Specifies Python packages required to run the script.
-
-**README.md**: Providing instructions and information about the script.
-
-**final_recipes.csv**: Final output CSV file containing filtered recipes with difficulty levels.
