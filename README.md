@@ -91,7 +91,7 @@ After installing the prerequisites, follow these steps.
 
 2. **Set Up GCP Authentication**: Configure authentication for Google Cloud Platform by following the instructions [here](https://cloud.google.com/docs/authentication/getting-started).
 
-3. **Initialize Terraform**: Navigate to the `terraform` directory and initialize Terraform by running the following command:
+3. **Initialize Terraform**: We use terraform to create the bucket we need on Google Cloud Storage. Navigate to the `terraform` directory and initialize Terraform by running the following command:
 
    ```bash
    terraform init
